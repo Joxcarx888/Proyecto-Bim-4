@@ -1,4 +1,4 @@
-package com.smarfat.webapp.model;
+package com.smarfat.webapp.gym.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,15 +10,17 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="Clientes")
-
-public class Cliente {
+@Table(name = "Inscripciones")
+public class Inscripcion{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombre;
-    private String telefono;
+
     @ManyToOne
-    private Membresia membresiaId;
+    private Cliente cliente;
+
+    @ManyToOne
+    private Sede sede;
 
 }
+

@@ -29,14 +29,18 @@ public class Entreno {
     private Sesion sesion;
 
     @ManyToMany
-    @JoinTable(name = "detalle_entreno",
+    @JoinTable(name = "detalle_entreno_cliente",
         joinColumns = @JoinColumn(name = "entreno_id", referencedColumnName = "id"),
-        inverseJoinColumns = {
-            @JoinColumn(name = "cliente_id", referencedColumnName = "id"),
-            @JoinColumn(name = "maquina_id", referencedColumnName = "id")
-        }
+        inverseJoinColumns = @JoinColumn(name = "cliente_id", referencedColumnName = "id")
     )
     private List<Cliente> clientes;
+
+    @ManyToMany
+    @JoinTable(name = "detalle_entreno_maquina",
+        joinColumns = @JoinColumn(name = "entreno_id", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(name = "maquina_id", referencedColumnName = "id")
+    )
     private List<Maquina> maquinas;
 }
+
 

@@ -1,4 +1,4 @@
-package com.smarfat.webapp.gym.Repository;
+package com.smarfat.webapp.gym.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

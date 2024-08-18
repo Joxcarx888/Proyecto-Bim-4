@@ -1,4 +1,4 @@
-package com.smarfat.webapp.controller;
+package com.smarfat.webapp.gym.controller;
 
 import java.util.HashMap;
 import java.util.List;
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.smarfat.webapp.model.Cliente;
-import com.smarfat.webapp.service.ClienteService;
+import com.smarfat.webapp.gym.model.Cliente;
+import com.smarfat.webapp.gym.service.ClienteService;
 
 @Controller
 @RestController
@@ -28,7 +28,7 @@ public class ClienteController {
     @Autowired
     ClienteService clienteService;
 
-    @GetMapping("/Clientes")
+    @GetMapping("/clientes")
     public ResponseEntity<List<Cliente>> listarClientes(){
         try {
             return ResponseEntity.ok(clienteService.listarClientes());

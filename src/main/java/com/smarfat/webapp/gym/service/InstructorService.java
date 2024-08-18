@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.smarfat.webapp.gym.Repository.InstructorRepository;
+import com.smarfat.webapp.gym.repository.InstructorRepository;
 import com.smarfat.webapp.gym.model.Instructor;
 
 @Service
