@@ -1,8 +1,12 @@
-package com.smarfat.webapp.service;
+package com.smarfat.webapp.gym.service;
+
+
 
 import java.util.List;
 
-import com.smarfat.webapp.model.Cliente;
+import com.smarfat.webapp.gym.model.Cliente;
+
+
 
 public interface IClienteService {
     public List<Cliente> listarClientes();

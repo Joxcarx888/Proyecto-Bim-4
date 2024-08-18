@@ -1,12 +1,16 @@
-package com.smarfat.webapp.service;
+package com.smarfat.webapp.gym.service;
+
+
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.smarfat.webapp.model.Cliente;
-import com.smarfat.webapp.repository.ClienteRepository;
+import com.smarfat.webapp.gym.model.Cliente;
+import com.smarfat.webapp.gym.repository.ClienteRepository;
+
+
 
 @Service
 public class ClienteService implements IClienteService {
