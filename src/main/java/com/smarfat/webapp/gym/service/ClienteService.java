@@ -34,4 +34,18 @@ public class ClienteService implements IClienteService {
         clienteRepository.delete(cliente);
     }
 
+    @Override
+    public Boolean limiteSedes(Cliente cliente){
+        Boolean flag = Boolean.FALSE;
+
+        if (cliente.getSedes().size() > 5) {
+            flag = Boolean.TRUE;
+        }
+
+        return flag;
+    }
+
+    
+    
+
 }

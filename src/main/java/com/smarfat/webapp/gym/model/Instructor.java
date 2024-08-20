@@ -12,7 +12,7 @@ import lombok.Data;
 @Table(name = "Instructores")
 public class Instructor {
 
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombreInstructor;

@@ -9,11 +9,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.smarfat.webapp.gym.model.Instructor;
@@ -21,19 +21,19 @@ import com.smarfat.webapp.gym.service.InstructorService;
 
 @Controller
 @RestController
-@RequestMapping("instructor")
+@RequestMapping("")
 public class InstructorController {
 
     @Autowired
     InstructorService instructorService;
 
-    @GetMapping("/")
+    @GetMapping("/instructores")
     public List<Instructor> listarInstructores(){
         return instructorService.listarInstructor();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Instructor> buscarInstructorPorId(@PathVariable Long id){
+    @GetMapping("/instructor")
+    public ResponseEntity<Instructor> buscarInstructorPorId(@RequestParam Long id){
         try {
             Instructor instructor = instructorService.buscarInstructorPorId(id);
             return ResponseEntity.ok(instructor);
@@ -42,21 +42,22 @@ public class InstructorController {
         }
     }
 
-    @PostMapping("/")
-    public ResponseEntity<Map<String, Boolean>> guardarInstructor(@RequestBody Instructor instructor) {
-        Map<String, Boolean> response = new HashMap<>();
+    @PostMapping("/instructor")
+    public ResponseEntity<Map<String, String>> guardarInstructor(@RequestBody Instructor instructor) {
+        Map<String, String> response = new HashMap<>();
         try {
             instructorService.guardarInstructor(instructor);
-            response.put("Instructor agregado con éxito", Boolean.TRUE);
+            response.put("message", "Se ha creado con exito");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
-            response.put("Instructor agregado con éxito", Boolean.FALSE);
+            response.put("message" ,"error" );
+            response.put("err" ,"No se ha agregado con exito" );
             return ResponseEntity.badRequest().body(response);
         }
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Map<String, String>> editarInstructor(@PathVariable Long id, @RequestBody Instructor instructorNuevo){
+    @PutMapping("/instructor")
+    public ResponseEntity<Map<String, String>> editarInstructor(@RequestParam Long id, @RequestBody Instructor instructorNuevo){
         Map<String, String> response = new HashMap<>();
         try {
             Instructor instructor = instructorService.buscarInstructorPorId(id);
@@ -74,8 +75,8 @@ public class InstructorController {
         }
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Map<String, String>> eliminarInstructor(@PathVariable Long id){
+    @DeleteMapping("/instructor")
+    public ResponseEntity<Map<String, String>> eliminarInstructor(@RequestParam Long id){
         Map<String, String> response = new HashMap<>();
         try {
             Instructor instructor = instructorService.buscarInstructorPorId(id);

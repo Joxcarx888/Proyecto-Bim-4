@@ -49,9 +49,15 @@ public class SedeController {
         Map<String, String> response = new HashMap<>();
 
         try {
-            sedeService.guardarSede(sede);
-            response.put("message", "Se agregado con exito");
-            return ResponseEntity.ok(response);
+            if(!sedeService.verificarSedeDuplicada(sede)){
+                sedeService.guardarSede(sede);
+                response.put("message", "Se agregado con exito");
+                return ResponseEntity.ok(response);
+            }else{
+                response.put("message" ,"error" );
+                response.put("err" ,"La direccion ya se utilizo" );
+                return ResponseEntity.badRequest().body(response);
+            }
         } catch (Exception e) {
             response.put("message", "error");
             response.put("err", "No se ha agregado con exito");

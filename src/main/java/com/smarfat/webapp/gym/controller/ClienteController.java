@@ -51,9 +51,15 @@ public class ClienteController {
         Map<String,String> response = new HashMap<>();
 
         try {
-            clienteService.guardarCliente(cliente);
-            response.put("message", "Se ha creado con exito");
-            return ResponseEntity.ok(response);
+            if(!clienteService.limiteSedes(cliente)){
+                clienteService.guardarCliente(cliente);
+                response.put("message", "Se ha creado con exito");
+                return ResponseEntity.ok(response);
+            }else{
+                response.put("message" ,"error" );
+                response.put("err" ,"Solo se puede registrar hasta 5 sedes" );
+                return ResponseEntity.badRequest().body(response);
+            }
         } catch (Exception e) {
             response.put("message" ,"error" );
             response.put("err" ,"No se ha agregado el Cliente" );

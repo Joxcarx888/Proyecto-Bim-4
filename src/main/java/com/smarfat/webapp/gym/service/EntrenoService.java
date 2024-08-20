@@ -13,6 +13,7 @@ public class EntrenoService implements IEntrenoService{
 
     @Autowired
     EntrenoRepository entrenoRepository;
+    ClienteService clienteService;
  
     @Override
     public List<Entreno> listarEntrenos() {
@@ -33,5 +34,6 @@ public class EntrenoService implements IEntrenoService{
     public void eliminarEntreno(Entreno entreno) {
         entrenoRepository.delete(entreno);
     }
+
  
 }

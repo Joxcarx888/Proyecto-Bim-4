@@ -12,4 +12,6 @@ public interface IClienteService {
     public Cliente guardarCliente(Cliente cliente);
 
     public void eliminarCliente(Cliente cliente);
+
+    public Boolean limiteSedes(Cliente cliente);
 }
