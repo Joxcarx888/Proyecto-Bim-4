@@ -57,9 +57,30 @@ public class EntrenoController {
         Map<String,String> response = new HashMap<>();
 
         try {
-            entrenoService.guardarEntreno(entreno);
-            response.put("message", "Se ha creado con exito");
-            return ResponseEntity.ok(response);
+            if(!entrenoService.verificarMembresia(entreno)){
+                if(!entrenoService.limiteMaquinas(entreno)){
+                    if(!entrenoService.limiteClientes(entreno)){
+                        entrenoService.guardarEntreno(entreno);
+                        response.put("message", "Se ha creado con exito");
+                        return ResponseEntity.ok(response);
+                    }else{  
+                        response.put("message" ,"error" );
+                        response.put("err" ,"Solo se puede registrar hasta 5 clientes" );
+                        return ResponseEntity.badRequest().body(response);
+                    }
+            
+                    
+                }else{
+                    response.put("message" ,"error" );
+                    response.put("err" ,"Solo se puede registrar hasta 5 maquinas" );
+                    return ResponseEntity.badRequest().body(response);
+                }   
+            }else{
+                response.put("message" ,"error" );
+                response.put("err" ,"Alguna membrecia esta vencida verifica el cliente" );
+                return ResponseEntity.badRequest().body(response);
+            }
+            
         } catch (Exception e) {
             e.printStackTrace();
             response.put("message" ,"error" );

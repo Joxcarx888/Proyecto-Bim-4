@@ -45,6 +45,20 @@ public class ClienteService implements IClienteService {
         return flag;
     }
 
+    @Override
+    public Boolean verificarDpiDuplicado(Cliente cliente){
+        Boolean flag = Boolean.FALSE;
+        List<Cliente> clientes = listarClientes();
+
+        for (Cliente cl : clientes) {
+            if(cl.getDpi().equals(cliente.getDpi()) && !cl.getId().equals(cliente.getId())){
+                flag = Boolean.TRUE;
+            }
+        }
+
+        return flag;
+    }
+
     
     
 

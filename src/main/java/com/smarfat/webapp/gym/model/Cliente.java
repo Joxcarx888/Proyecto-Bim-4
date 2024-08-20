@@ -21,6 +21,7 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
+    private String dpi;
     private String telefono;
 
     @ManyToOne

@@ -14,4 +14,6 @@ public interface IClienteService {
     public void eliminarCliente(Cliente cliente);
 
     public Boolean limiteSedes(Cliente cliente);
+
+    public Boolean verificarDpiDuplicado(Cliente cliente);
 }

@@ -52,9 +52,16 @@ public class ClienteController {
 
         try {
             if(!clienteService.limiteSedes(cliente)){
-                clienteService.guardarCliente(cliente);
-                response.put("message", "Se ha creado con exito");
-                return ResponseEntity.ok(response);
+                if(!clienteService.verificarDpiDuplicado(cliente)){
+                    clienteService.guardarCliente(cliente);
+                    response.put("message", "Se ha creado con exito");
+                    return ResponseEntity.ok(response);
+                }else{
+                    response.put("message" ,"error" );
+                    response.put("err" ,"El Dpi ya se ha utilizado verifica el error" );
+                    return ResponseEntity.badRequest().body(response);
+                }
+                
             }else{
                 response.put("message" ,"error" );
                 response.put("err" ,"Solo se puede registrar hasta 5 sedes" );
@@ -73,6 +80,7 @@ public class ClienteController {
         try {
             Cliente cliente = clienteService.buscarCliente(id);
             cliente.setNombre(clienteNuevo.getNombre());
+            cliente.setDpi(clienteNuevo.getDpi());
             cliente.setTelefono(clienteNuevo.getTelefono());
             clienteService.guardarCliente(clienteNuevo);
             response.put("message", "Se he modificado correctamente");
