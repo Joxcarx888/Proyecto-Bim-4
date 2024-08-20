@@ -28,8 +28,12 @@ public class MaquinaController {
     MaquinaService maquinaService;
 
     @GetMapping("/maquinas")
-    public List<Maquina> listarMaquinas(){
-        return maquinaService.listarMaquinas();
+    public ResponseEntity<List<Maquina>> listarMaquinas(){
+        try {
+            return ResponseEntity.ok(maquinaService.listarMaquinas());
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(null);
+        }
     }
 
     @GetMapping("/maquina")
