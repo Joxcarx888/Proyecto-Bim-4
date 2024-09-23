@@ -1,0 +1,7 @@
+package com.smarfat.webapp.gym.util;
+
+public enum OperacionCrud {
+    GUARDAR,
+    EDITAR,
+
+}

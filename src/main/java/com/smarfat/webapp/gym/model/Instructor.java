@@ -9,16 +9,22 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "Instructor")
+@Table(name = "Instructores")
 public class Instructor {
 
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombreInstructor;
     private String telefonoInstructor;
     private Double sueldoInstructor;
     private String especialidadInstructor;
+
+    @Override
+    public String toString() {
+        return "Id: " + id + " | " + nombreInstructor + " " + especialidadInstructor;
+    }
+
     
       
     
