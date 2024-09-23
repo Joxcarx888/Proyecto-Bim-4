@@ -38,7 +38,11 @@ public class MenuPrincipalController implements Initializable {
         } else if (event.getSource() == btnSedes) {
             //stage.menuSedesView();
         } else if (event.getSource() == btnMembresias) {
+<<<<<<< HEAD
             //stage.menuMembresiasView();
+=======
+            stage.menuMembresiasView();
+>>>>>>> origin/jmorejon-2020558
         } else if (event.getSource() == btnEntrenos) {
             //stage.menuEntrenosView();
         } else if (event.getSource() == btnCerrarSesion) {
