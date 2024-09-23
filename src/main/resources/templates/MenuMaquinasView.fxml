@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.smarfat.webapp.gym.controller.FXController.MenuMaquinasController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/MenúMáquinas.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfId" editable="false" layoutX="50.0" layoutY="148.0" prefHeight="43.0" prefWidth="188.0" />
+      <TextField fx:id="tfMarca" layoutX="50.0" layoutY="273.0" prefHeight="43.0" prefWidth="188.0" />
+      <TextField fx:id="tfEspecialidad" layoutX="50.0" layoutY="384.0" prefHeight="43.0" prefWidth="188.0" />
+      <Button fx:id="btnGuardar" layoutX="50.0" layoutY="446.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="43.0" prefWidth="77.0" style="-fx-background-color: #4f4e4d; -fx-background-radius: 40;" text="Guardar" textFill="WHITE">
+         <font>
+            <Font name="Harlow Solid Italic" size="12.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tblMaquinas" layoutX="260.0" layoutY="148.0" onMouseClicked="#cargarTextField" prefHeight="423.0" prefWidth="612.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="131.199951171875" text="ID" />
+          <TableColumn fx:id="colMarca" prefWidth="162.40005493164062" text="Marca" />
+            <TableColumn fx:id="colEspecialidad" prefWidth="320.800048828125" text="Especialidad" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnVaciar" layoutX="160.0" layoutY="446.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="43.0" prefWidth="77.0" style="-fx-background-color: #4f4e4d; -fx-background-radius: 40;" text="Vaciar" textFill="WHITE">
+         <font>
+            <Font name="Harlow Solid Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnRegresar" layoutX="50.0" layoutY="497.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="18.0" prefWidth="188.0" style="-fx-background-color: #4f4e4d; -fx-background-radius: 40;" text="Regresar" textFill="WHITE">
+         <font>
+            <Font name="Harlow Solid Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnEliminar" layoutX="50.0" layoutY="532.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="18.0" prefWidth="188.0" style="-fx-background-color: #4f4e4d; -fx-background-radius: 40;" text="Eliminar" textFill="WHITE">
+         <font>
+            <Font name="Harlow Solid Italic" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
