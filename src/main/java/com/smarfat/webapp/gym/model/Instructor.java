@@ -19,6 +19,12 @@ public class Instructor {
     private String telefonoInstructor;
     private Double sueldoInstructor;
     private String especialidadInstructor;
+
+    @Override
+    public String toString() {
+        return "Id: " + id + " | " + nombreInstructor + " " + especialidadInstructor;
+    }
+
     
       
     
