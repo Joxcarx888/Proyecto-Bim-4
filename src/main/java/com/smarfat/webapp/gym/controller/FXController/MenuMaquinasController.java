@@ -17,6 +17,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -46,21 +47,47 @@ public class MenuMaquinasController implements Initializable{
        cargarDatos();
     }
 
-    public void handleButtonAction(ActionEvent event){
-        if (event.getSource() == btnGuardar) {
-            if (tfId.getText().isBlank()) {
+    public void handleButtonAction(ActionEvent event) {
+    if (event.getSource() == btnGuardar) {
+        if (tfId.getText().isBlank()) {
+            if (!tfMarca.getText().isBlank() && !tfEspecialidad.getText().isBlank()) {
                 agregarMaquina();
-            }else {
-                editarCategoria();
+                GymAlertas.getInstance().mostrarAlertasInformacion(400); 
+            } else {
+                GymAlertas.getInstance().mostrarAlertasInformacion(33);
+                if (tfMarca.getText().isBlank()) {
+                    tfMarca.requestFocus();
+                } else if (tfEspecialidad.getText().isBlank()) {
+                    tfEspecialidad.requestFocus();
+                }
             }
-        }else if(event.getSource() == btnEliminar){
-            eliminarMaquina();
-        }else if(event.getSource() == btnVaciar){
-            limpiarTextFiled();
-        }else if(event.getSource() == btnRegresar){
-            stage.menuPrincipalView();
+        } else {
+            if (!tfMarca.getText().isBlank() && !tfEspecialidad.getText().isBlank()) {
+                if (GymAlertas.getInstance().mostrarAlertaConfirmacion(505).get() == ButtonType.OK) {
+                    editarCategoria();
+                    GymAlertas.getInstance().mostrarAlertasInformacion(500);
+                }
+            } else {
+                GymAlertas.getInstance().mostrarAlertasInformacion(33);
+                if (tfMarca.getText().isBlank()) {
+                    tfMarca.requestFocus();
+                } else if (tfEspecialidad.getText().isBlank()) {
+                    tfEspecialidad.requestFocus();
+                }
+            }
         }
+    } else if (event.getSource() == btnEliminar) {
+        if (GymAlertas.getInstance().mostrarAlertaConfirmacion(404).get() == ButtonType.OK) {
+            eliminarMaquina();
+            limpiarTextFiled();
+        }
+    } else if (event.getSource() == btnVaciar) {
+        limpiarTextFiled();
+    } else if (event.getSource() == btnRegresar) {
+        stage.menuPrincipalView();
     }
+}
+
 
     public void cargarDatos(){
         tblMaquinas.getItems().clear();
@@ -94,7 +121,6 @@ public class MenuMaquinasController implements Initializable{
         maquina.setMarca(tfMarca.getText());
         maquina.setEspecialidad(tfEspecialidad.getText());
         maquinaService.guardarMaquina(maquina);
-        GymAlertas.getInstance().mostrarAlertasInformacion(400);
         cargarDatos();
     }
     
