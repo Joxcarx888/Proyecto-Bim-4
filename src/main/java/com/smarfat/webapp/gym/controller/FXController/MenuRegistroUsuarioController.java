@@ -95,10 +95,5 @@ public class MenuRegistroUsuarioController implements Initializable{
         usuarioService.guardarUsuario(usuario);
 
     }
-<<<<<<< HEAD
-=======
 
-    
->>>>>>> origin/jmorejon-2020558
-    
 }

@@ -25,6 +25,22 @@ public class Instructor {
         return "Id: " + id + " | " + nombreInstructor + " " + especialidadInstructor;
     }
 
+    public void setNombre(String text) {
+        throw new UnsupportedOperationException("Unimplemented method 'setNombre'");
+    }
+
+    public void setNivelAcceso(String selectedItem) {
+        throw new UnsupportedOperationException("Unimplemented method 'setNivelAcceso'");
+    }
+
+    public String getNombre() {
+        throw new UnsupportedOperationException("Unimplemented method 'getNombre'");
+    }
+
+    public String getNivelAcceso() {
+        throw new UnsupportedOperationException("Unimplemented method 'getNivelAcceso'");
+    }
+
     
       
     

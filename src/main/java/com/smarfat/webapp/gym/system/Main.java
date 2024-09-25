@@ -8,10 +8,7 @@ import org.springframework.context.ApplicationContext;
 
 import com.smarfat.webapp.gym.GymApplication;
 import com.smarfat.webapp.gym.controller.FXController.MenuInicioSesionController;
-<<<<<<< HEAD
-=======
 import com.smarfat.webapp.gym.controller.FXController.MenuMembresiaController;
->>>>>>> origin/jmorejon-2020558
 import com.smarfat.webapp.gym.controller.FXController.MenuPrincipalController;
 import com.smarfat.webapp.gym.controller.FXController.MenuRegistroUsuarioController;
 
@@ -88,17 +85,22 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
-<<<<<<< HEAD
-=======
 
     public void menuMembresiasView() {
         try {
             MenuMembresiaController menuMembresiaView = (MenuMembresiaController) cambiarEscena("MenuMembresiaView.fxml", 600, 400);
-            menuMembresiaView.setStage(this);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
->>>>>>> origin/jmorejon-2020558
+
+    public void menuInstructoresView() {
+        try {
+            MenuInstructorController menuInstructorController = (MenuInstructorController) cambiarEscena("MenuInstructorView.fxml", 600, 400);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
     
 }
