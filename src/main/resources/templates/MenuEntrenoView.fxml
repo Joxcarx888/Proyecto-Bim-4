@@ -41,7 +41,7 @@
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="35.0" onDragDetected="#handleButtonAction" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../Eithan%202/Proyecto-Bim-4/src/main/resources/images/Lupa.png" />
+                  <Image url="@../images/Lupa.png" />
                </image>
             </ImageView>
          </graphic>

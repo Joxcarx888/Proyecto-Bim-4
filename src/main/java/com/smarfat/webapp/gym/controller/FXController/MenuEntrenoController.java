@@ -65,32 +65,29 @@ public class MenuEntrenoController implements Initializable{
     public void handleButtonAction(ActionEvent event) {
         if (event.getSource() == btnGuardar) {
             if (tfId.getText().isBlank()) {
-                if(cmbIntructores.getValue() != null && cmbSesiones.getValue() != null){
+                if (cmbIntructores.getValue() != null && cmbSesiones.getValue() != null) {
                     agregarEntreno();
                     GymAlertas.getInstance().mostrarAlertasInformacion(400);
+                } else {
+                    GymAlertas.getInstance().mostrarAlertasInformacion(33);
                 }
             } else {
-                if(cmbIntructores.getValue() != null && cmbSesiones.getValue() != null){
-                    if(GymAlertas.getInstance().mostrarAlertaConfirmacion(505).get() == ButtonType.OK){
+                if (cmbIntructores.getValue() != null && cmbSesiones.getValue() != null) {
+                    if (GymAlertas.getInstance().mostrarAlertaConfirmacion(505).get() == ButtonType.OK) {
                         editarEntreno();
                         GymAlertas.getInstance().mostrarAlertasInformacion(500);
                     }
+                } else {
+                    GymAlertas.getInstance().mostrarAlertasInformacion(33);
                 }
             }
         } else if (event.getSource() == btnEliminar) {
-            if(GymAlertas.getInstance().mostrarAlertaConfirmacion(404).get() == ButtonType.OK){
+            if (GymAlertas.getInstance().mostrarAlertaConfirmacion(404).get() == ButtonType.OK) {
                 eliminarEntreno();
+                limpiarTextField();
             }
-            
-        } else if (event.getSource() == btnLimpiar) {
+        } else if (event.getSource() == btnVaciar) {
             limpiarTextField();
-        } else if (event.getSource() == btnBuscar) {
-            tblEntrenos.getItems().clear();
-            if (tfEntrenoId.getText().isBlank()) {
-                cargarDatos();
-            } else {
-                buscarEntreno();
-            }
         } else if (event.getSource() == btnRegresar) {
             stage.menuPrincipalView();
         }

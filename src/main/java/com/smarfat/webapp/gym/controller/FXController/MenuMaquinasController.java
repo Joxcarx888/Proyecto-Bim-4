@@ -31,13 +31,13 @@ public class MenuMaquinasController implements Initializable{
     private Main stage;
 
     @FXML
-    TextField tfId, tfMarca, tfEspecialidad;
+    TextField tfId, tfMarca, tfEspecialidad, tfBuscar;
     @FXML
     TableView tblMaquinas;
     @FXML
     TableColumn colId, colMarca, colEspecialidad;
     @FXML
-    Button btnGuardar, btnVaciar, btnRegresar, btnEliminar;
+    Button btnGuardar, btnVaciar, btnRegresar, btnEliminar, btnBuscar;
 
     @Autowired
     MaquinaService maquinaService;
@@ -81,7 +81,14 @@ public class MenuMaquinasController implements Initializable{
             eliminarMaquina();
             limpiarTextFiled();
         }
-    } else if (event.getSource() == btnVaciar) {
+    } else if (event.getSource() == btnBuscar) {
+        tblMaquinas.getItems().clear();
+        if (tfBuscar.getText().isBlank()) {
+            cargarDatos();
+        } else {
+            buscarMaquina();    
+        }
+    }else if (event.getSource() == btnVaciar) {
         limpiarTextFiled();
     } else if (event.getSource() == btnRegresar) {
         stage.menuPrincipalView();
@@ -137,5 +144,20 @@ public class MenuMaquinasController implements Initializable{
         Maquina maquina = maquinaService.buscarMaquinaPorId(Long.parseLong(tfId.getText()));
         maquinaService.eliminarMaquina(maquina);
         cargarDatos();
+    }
+
+    public void buscarMaquina(){
+        Maquina maquina = maquinaService.buscarMaquinaPorId(Long.parseLong(tfBuscar.getText()));
+            ObservableList<Maquina> resultadoBusqueda = FXCollections.observableArrayList(maquina);
+            tblMaquinas.setItems(resultadoBusqueda);
+
+    }
+
+    public Main getStage() {
+        return stage;
+    }
+
+    public void setStage(Main stage) {
+        this.stage = stage;
     }
 }
