@@ -14,11 +14,11 @@ public class Instructor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String nombreInstructor;
-    private String telefonoInstructor;
-    private Double sueldoInstructor;
-    private String especialidadInstructor;
+    Long id;
+    String nombreInstructor;
+    String telefonoInstructor;
+    Double sueldoInstructor;
+    String especialidadInstructor;
 
     @Override
     public String toString() {
@@ -39,6 +39,16 @@ public class Instructor {
 
     public String getNivelAcceso() {
         throw new UnsupportedOperationException("Unimplemented method 'getNivelAcceso'");
+    }
+
+    public void setSueldo(double double1) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setSueldo'");
+    }
+
+    public double getSueldo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getSueldo'");
     }
 
     

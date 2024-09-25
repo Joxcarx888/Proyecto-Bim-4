@@ -8,7 +8,7 @@ public interface IInstructorService {
 
     public List<Instructor> listarInstructor();
     public Instructor guardarInstructor(Instructor instructor);
-    public Instructor buscarInstructorPorId(Long id);
+    public Instructor buscarInstructorPorId(long l);
     public void eliminarInstructor(Instructor instructor);      
 
     
