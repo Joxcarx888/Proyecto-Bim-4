@@ -28,9 +28,9 @@ public class MenuPrincipalController implements Initializable {
     @FXML
     public void handleButtonAction(ActionEvent event) {
         if (event.getSource() == btnClientes) {
-            //stage.menuClientesView();
+            stage.menuClientesView();
         } else if (event.getSource() == btnInstructores) {
-            //stage.menuInstructoresView();
+            stage.menuInstructoresView();
         } else if (event.getSource() == btnMaquinas) {
             stage.menuMaquinasView();
         } else if (event.getSource() == btnSesiones) {

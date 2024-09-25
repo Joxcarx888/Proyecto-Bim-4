@@ -17,7 +17,7 @@
             <Image url="@../images/MenuEntrenos.png" />
          </image>
       </ImageView>
-      <TableView fx:id="tblEntrenos" layoutX="341.0" layoutY="109.0" prefHeight="330.0" prefWidth="274.0">
+      <TableView fx:id="tblEntrenos" layoutX="341.0" layoutY="109.0" onMouseClicked="#cargarTextField" prefHeight="330.0" prefWidth="274.0">
         <columns>
           <TableColumn fx:id="colId" prefWidth="58.13330078125" text="Id" />
           <TableColumn fx:id="colInstructorId" prefWidth="112.79998779296875" text="Instructor" />

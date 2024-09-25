@@ -100,8 +100,8 @@ public class MenuMaquinasController implements Initializable{
         tblMaquinas.getItems().clear();
         tblMaquinas.setItems(listarMaquinas());
         colId.setCellValueFactory(new PropertyValueFactory<Maquina, Long>("id"));
-        colMarca.setCellValueFactory(new PropertyValueFactory<Maquina, Long>("marca"));
-        colEspecialidad.setCellValueFactory(new PropertyValueFactory<Maquina, Long>("especialidad"));
+        colMarca.setCellValueFactory(new PropertyValueFactory<Maquina, String>("marca"));
+        colEspecialidad.setCellValueFactory(new PropertyValueFactory<Maquina, String>("especialidad"));
     }
 
     public void cargarTextField(){

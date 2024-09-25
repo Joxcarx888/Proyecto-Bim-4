@@ -7,8 +7,10 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
 
 import com.smarfat.webapp.gym.GymApplication;
+import com.smarfat.webapp.gym.controller.FXController.MenuClienteController;
 import com.smarfat.webapp.gym.controller.FXController.MenuEntrenoController;
 import com.smarfat.webapp.gym.controller.FXController.MenuInicioSesionController;
+import com.smarfat.webapp.gym.controller.FXController.MenuInstructorController;
 import com.smarfat.webapp.gym.controller.FXController.MenuMaquinasController;
 import com.smarfat.webapp.gym.controller.FXController.MenuMembresiaController;
 import com.smarfat.webapp.gym.controller.FXController.MenuPrincipalController;
@@ -130,6 +132,24 @@ public class Main extends Application {
         try {
             MenuEntrenoController menuEntrenosView = (MenuEntrenoController) cambiarEscena("MenuEntrenoView.fxml", 1000, 600);
             menuEntrenosView.setStage(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void menuInstructoresView() {
+        try {
+            MenuInstructorController menuInstructorController = (MenuInstructorController) cambiarEscena("MenuInstructor.fxml", 600, 400);
+            menuInstructorController.setStage(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void menuClientesView() {
+        try {
+            MenuClienteController menuClientesiaView = (MenuClienteController) cambiarEscena("MenuClienteView.fxml", 1200, 850);
+            menuClientesiaView.setStage(this);
         } catch (Exception e) {
             e.printStackTrace();
         }
