@@ -47,9 +47,11 @@ public class MenuInstructorController implements Initializable {
     @FXML
     TableColumn<Instructor, String> colNombre;
     @FXML
-    TableColumn<Instructor, String> colEspecialidad; 
+    TableColumn<Instructor, String> colEspecialidad;
     @FXML
-    TableColumn<Instructor, Double> colSueldo; 
+    TableColumn<Instructor, Double> colSueldo;
+    @FXML
+    TableColumn<Instructor, String> colTelefono; // Columna para el teléfono
     @FXML
     Button btnGuardar;
     @FXML
@@ -59,30 +61,30 @@ public class MenuInstructorController implements Initializable {
     @FXML
     Button btnEliminar;
     @FXML
-    Button btnBuscar; 
+    Button btnBuscar;
 
     @Autowired
     InstructorService instructorService;
 
     @Override
     public void initialize(URL url, ResourceBundle resources) {
-        cargarDatos();
+        cargarDatos(); 
     }
 
     @FXML
     public void handleButtonAction(ActionEvent event) {
         if (event.getSource() == btnGuardar) {
             if (tfId.getText().isBlank()) {
-                if (!tfNombre.getText().isBlank() && !tfEspecialidad.getText().isBlank() && !tfSueldo.getText().isBlank()) {
+                if (!tfNombre.getText().isBlank() && !tfEspecialidad.getText().isBlank() && !tfSueldo.getText().isBlank() && !tfTelefono.getText().isBlank()) {
                     agregarInstructor();
                     GymAlertas.getInstance().mostrarAlertasInformacion(400); 
                 } else {
                     mostrarAlertasYFoco();
                 }
             } else {
-                if (!tfNombre.getText().isBlank() && !tfEspecialidad.getText().isBlank() && !tfSueldo.getText().isBlank()) {
+                if (!tfNombre.getText().isBlank() && !tfEspecialidad.getText().isBlank() && !tfSueldo.getText().isBlank() && !tfTelefono.getText().isBlank()) {
                     if (GymAlertas.getInstance().mostrarAlertaConfirmacion(505).get() == ButtonType.OK) {
-                        editarInstructor();
+                        editarInstructor(); 
                         GymAlertas.getInstance().mostrarAlertasInformacion(500);
                     }
                 } else {
@@ -97,7 +99,7 @@ public class MenuInstructorController implements Initializable {
         } else if (event.getSource() == btnVaciar) {
             limpiarTextField();
         } else if (event.getSource() == btnRegresar) {
-            stage.menuPrincipalView();
+            cargarDatos(); 
         } else if (event.getSource() == btnBuscar) {
             buscarInstructor();
         }
@@ -111,6 +113,8 @@ public class MenuInstructorController implements Initializable {
             tfEspecialidad.requestFocus();
         } else if (tfSueldo.getText().isBlank()) {
             tfSueldo.requestFocus();
+        } else if (tfTelefono.getText().isBlank()) {
+            tfTelefono.requestFocus(); 
         }
     }
 
@@ -121,6 +125,7 @@ public class MenuInstructorController implements Initializable {
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombreInstructor"));
         colEspecialidad.setCellValueFactory(new PropertyValueFactory<>("especialidadInstructor"));
         colSueldo.setCellValueFactory(new PropertyValueFactory<>("sueldoInstructor"));
+        colTelefono.setCellValueFactory(new PropertyValueFactory<>("telefonoInstructor")); 
     }
 
     @FXML
@@ -131,7 +136,7 @@ public class MenuInstructorController implements Initializable {
             tfNombre.setText(instructor.getNombreInstructor());
             tfEspecialidad.setText(instructor.getEspecialidadInstructor());
             tfSueldo.setText(Double.toString(instructor.getSueldoInstructor()));
-            tfTelefono.setText(instructor.getTelefonoInstructor());
+            tfTelefono.setText(instructor.getTelefonoInstructor()); 
         }
     }
 
@@ -140,7 +145,7 @@ public class MenuInstructorController implements Initializable {
         tfNombre.clear();
         tfEspecialidad.clear();
         tfSueldo.clear();
-        tfTelefono.clear();
+        tfTelefono.clear(); 
     }
 
     ObservableList<Instructor> listarInstructores() {
@@ -162,7 +167,7 @@ public class MenuInstructorController implements Initializable {
         instructor.setNombreInstructor(tfNombre.getText());
         instructor.setEspecialidadInstructor(tfEspecialidad.getText());
         instructor.setSueldoInstructor(Double.parseDouble(tfSueldo.getText()));
-        instructor.setTelefonoInstructor(tfTelefono.getText()); // Añadir teléfono
+        instructor.setTelefonoInstructor(tfTelefono.getText()); 
         instructorService.guardarInstructor(instructor);
         cargarDatos();
     }
@@ -174,17 +179,18 @@ public class MenuInstructorController implements Initializable {
     }
 
     public void buscarInstructor() {
-        try {
-            long idBuscado = Long.parseLong(tfId.getText());
-            Instructor instructor = instructorService.buscarInstructorPorId(idBuscado);
-            ObservableList<Instructor> instructoresFiltrados = FXCollections.observableArrayList();
-            if (instructor != null) {
-                instructoresFiltrados.add(instructor);
+        if (tfId.getText().isBlank()) {
+            cargarDatos(); 
+        } else {
+            try {
+                long idBuscado = Long.parseLong(tfId.getText());
+                Instructor instructor = instructorService.buscarInstructorPorId(idBuscado);
+                ObservableList<Instructor> instructoresFiltrados = FXCollections.observableArrayList();
+                if (instructor != null) {
+                    instructoresFiltrados.add(instructor);
+                }
+                tblInstructores.setItems(instructoresFiltrados);
+            } catch (NumberFormatException e) {
+                GymAlertas.getInstance().mostrarAlertasInformacion(33);
             }
-            tblInstructores.setItems(instructoresFiltrados);
-        } catch (NumberFormatException e) {
-            GymAlertas.getInstance().mostrarAlertasInformacion(33);
         }
-    }
-}
-
