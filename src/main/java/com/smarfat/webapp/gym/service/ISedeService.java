@@ -13,4 +13,6 @@ public interface ISedeService {
     public Sede buscarSedePorId(Long id);
 
     public void eliminarSede(Sede sede);
+
+    public Boolean verificarSedeDuplicada(Sede sede);
 }

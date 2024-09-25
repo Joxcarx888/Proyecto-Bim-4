@@ -16,48 +16,42 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.smarfat.webapp.gym.model.Sede;
-import com.smarfat.webapp.gym.service.SedeService;
+import com.smarfat.webapp.gym.model.Sesion;
+import com.smarfat.webapp.gym.service.SesionService;
 
 @Controller
 @RestController
 @RequestMapping("")
-public class SedeController {
+public class SesionController {
     @Autowired
-    SedeService sedeService;
+    SesionService sesionService;
 
-    @GetMapping("/sedes")
-    public ResponseEntity<List<Sede>> listarSedes() {
+    @GetMapping("/sesiones")
+    public ResponseEntity<List<Sesion>> listarSesiones() {
         try {
-            return ResponseEntity.ok(sedeService.listarSedes());
+            return ResponseEntity.ok(sesionService.listarSesiones());
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(null);
         }
     }
 
-    @GetMapping("/sede")
-    public ResponseEntity<Sede> buscarSedePorId(@RequestParam long id) {
+    @GetMapping("/sesion")
+    public ResponseEntity<Sesion> buscarSesionPorId(@RequestParam long id) {
         try {
-            return ResponseEntity.ok(sedeService.buscarSedePorId(id));
+            return ResponseEntity.ok(sesionService.buscarSesionPorId(id));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(null);
         }
     }
 
-    @PostMapping("/sede")
-    public ResponseEntity<Map<String, String>> agregarSede(@RequestBody Sede sede) {
+    @PostMapping("/sesion")
+    public ResponseEntity<Map<String, String>> agregarSesion(@RequestBody Sesion sesion) {
         Map<String, String> response = new HashMap<>();
 
         try {
-            if(!sedeService.verificarSedeDuplicada(sede)){
-                sedeService.guardarSede(sede);
-                response.put("message", "Se agregado con exito");
-                return ResponseEntity.ok(response);
-            }else{
-                response.put("message" ,"error" );
-                response.put("err" ,"La direccion ya se utilizo" );
-                return ResponseEntity.badRequest().body(response);
-            }
+            sesionService.guardarSesion(sesion);
+            response.put("message", "Se agregado con exito");
+            return ResponseEntity.ok(response);
         } catch (Exception e) {
             response.put("message", "error");
             response.put("err", "No se ha agregado con exito");
@@ -65,15 +59,15 @@ public class SedeController {
         }
     }
 
-    @PutMapping("/sede")
-    public ResponseEntity<Map<String, String>> editarSede(@RequestParam Long id, @RequestBody Sede sedeNueva) {
+    @PutMapping("/sesion")
+    public ResponseEntity<Map<String, String>> editarSesion(@RequestParam Long id, @RequestBody Sesion sesionNueva) {
         Map<String, String> response = new HashMap<>();
         try {
-            Sede sede = sedeService.buscarSedePorId(id);
-            sede.setDireccion(sedeNueva.getDireccion());
+            Sesion sesion = sesionService.buscarSesionPorId(id);
+            sesion.setEspecialidad(sesionNueva.getEspecialidad());
 
-            sedeService.guardarSede(sede);
-            response.put("message", "Se ha modificado correctamente");
+            sesionService.guardarSesion(sesion);
+            response.put("message", "Se he modificado correctamente");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             response.put("message", "error");
@@ -82,14 +76,14 @@ public class SedeController {
         }
     }
 
-    @DeleteMapping("/sede")
-    public ResponseEntity<Map<String, String>> eliminarSede(@RequestParam Long id) {
+    @DeleteMapping("/sesion")
+    public ResponseEntity<Map<String, String>> eliminarSesion(@RequestParam Long id) {
         Map<String, String> response = new HashMap<>();
         try {
-            Sede sede = sedeService.buscarSedePorId(id);
+            Sesion sesion = sesionService.buscarSesionPorId(id);
 
-            sedeService.eliminarSede(sede);
-            response.put("message", "Se ha eliminado con exito");
+            sesionService.eliminarSesion(sesion);
+            response.put("message", "Se ha elimnado con exito");
             return ResponseEntity.ok(response);
 
         } catch (Exception e) {
@@ -99,3 +93,4 @@ public class SedeController {
         }
     }
 }
+

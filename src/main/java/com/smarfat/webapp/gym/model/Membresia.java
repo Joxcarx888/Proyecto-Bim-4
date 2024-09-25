@@ -9,11 +9,11 @@ import lombok.Data;
 
 @Entity 
 @Data
-@Table(name = "Sedes")
-public class Sede {
+@Table(name = "Membresias")
+public class Membresia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String direccion;
-
+    private int duracion;
+    private Boolean vigencia;
 }

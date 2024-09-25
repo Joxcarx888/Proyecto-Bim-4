@@ -33,4 +33,18 @@ public class SedeService implements ISedeService {
         sedeRepository.delete(sede);
     }
 
+    @Override
+    public Boolean verificarSedeDuplicada(Sede sede){
+        Boolean flag = Boolean.FALSE;
+        List<Sede> sedes = listarSedes();
+
+        for (Sede se : sedes) {
+            if(se.getDireccion().equals(sede.getDireccion()) && !se.getId().equals(sede.getId())){
+                flag = Boolean.TRUE;
+            }
+        }
+
+        return flag;
+    }
+
 }
