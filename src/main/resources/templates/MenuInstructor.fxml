@@ -13,7 +13,7 @@
     <children>
       <ImageView fitHeight="323.0" fitWidth="521.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../bvbv.jfif" />
+            <Image url="@../images/Instructor.png" />
          </image>
       </ImageView>
         <Label layoutX="33.0" layoutY="8.0" text="ID:" textFill="WHITE" />
@@ -48,4 +48,3 @@
         <Button fx:id="btnRegresar" layoutX="415.0" layoutY="161.0" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="59.0" text="Regresar" />
     </children>
 </AnchorPane>
-
