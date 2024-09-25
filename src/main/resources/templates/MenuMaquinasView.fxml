@@ -46,5 +46,11 @@
             <Font name="Harlow Solid Italic" size="12.0" />
          </font>
       </Button>
+      <TextField fx:id="tfBuscar" layoutX="260.0" layoutY="110.0" prefHeight="26.0" prefWidth="132.0" />
+      <Button fx:id="btnBuscar" layoutX="408.0" layoutY="108.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="64.0" style="-fx-background-color: #4f4e4d; -fx-background-radius: 40;" text="Buscar" textFill="WHITE">
+         <font>
+            <Font name="Harlow Solid Italic" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
