@@ -7,10 +7,14 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
 
 import com.smarfat.webapp.gym.GymApplication;
+import com.smarfat.webapp.gym.controller.FXController.MenuEntrenoController;
 import com.smarfat.webapp.gym.controller.FXController.MenuInicioSesionController;
+import com.smarfat.webapp.gym.controller.FXController.MenuMaquinasController;
 import com.smarfat.webapp.gym.controller.FXController.MenuMembresiaController;
 import com.smarfat.webapp.gym.controller.FXController.MenuPrincipalController;
 import com.smarfat.webapp.gym.controller.FXController.MenuRegistroUsuarioController;
+import com.smarfat.webapp.gym.controller.FXController.MenuSedeController;
+import com.smarfat.webapp.gym.controller.FXController.MenuSesionController;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -90,6 +94,42 @@ public class Main extends Application {
         try {
             MenuMembresiaController menuMembresiaView = (MenuMembresiaController) cambiarEscena("MenuMembresiaView.fxml", 600, 400);
             menuMembresiaView.setStage(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void menuSedesView() {
+        try {
+            MenuSedeController menuSedesView = (MenuSedeController) cambiarEscena("MenuSedesView.fxml", 600, 400);
+            menuSedesView.setStage(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void menuSesionesView() {
+        try {
+            MenuSesionController menuSesionesView = (MenuSesionController) cambiarEscena("MenuSesionView.fxml", 600, 400);
+            menuSesionesView.setStage(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void menuMaquinasView(){
+        try {
+            MenuMaquinasController menuMaquinasView = (MenuMaquinasController) cambiarEscena("MenuMaquinasView.fxml", 900, 600);
+            menuMaquinasView.setStage(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void menuEntrenosView(){
+        try {
+            MenuEntrenoController menuEntrenosView = (MenuEntrenoController) cambiarEscena("MenuEntrenoView.fxml", 1000, 600);
+            menuEntrenosView.setStage(this);
         } catch (Exception e) {
             e.printStackTrace();
         }

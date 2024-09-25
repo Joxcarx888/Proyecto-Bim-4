@@ -22,7 +22,7 @@ public class Instructor {
 
     @Override
     public String toString() {
-        return "Id: " + id + " | " + nombreInstructor + " " + especialidadInstructor;
+        return "Id: " + id + " | " + nombreInstructor + " | " + especialidadInstructor;
     }
 
     
