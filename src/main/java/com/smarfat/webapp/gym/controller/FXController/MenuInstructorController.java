@@ -194,3 +194,5 @@ public class MenuInstructorController implements Initializable {
                 GymAlertas.getInstance().mostrarAlertasInformacion(33);
             }
         }
+    }
+}
