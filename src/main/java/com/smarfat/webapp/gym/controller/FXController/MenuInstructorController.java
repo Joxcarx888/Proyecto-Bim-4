@@ -99,7 +99,7 @@ public class MenuInstructorController implements Initializable {
         } else if (event.getSource() == btnVaciar) {
             limpiarTextField();
         } else if (event.getSource() == btnRegresar) {
-            cargarDatos(); 
+            stage.menuPrincipalView();
         } else if (event.getSource() == btnBuscar) {
             buscarInstructor();
         }
