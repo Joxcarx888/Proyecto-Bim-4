@@ -15,4 +15,9 @@ public class Sesion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String especialidad;
+
+    @Override
+    public String toString() {
+        return "Id: " + id + " | " + especialidad;
+    }
 }

@@ -28,17 +28,17 @@ public class MenuPrincipalController implements Initializable {
     @FXML
     public void handleButtonAction(ActionEvent event) {
         if (event.getSource() == btnClientes) {
-            //stage.menuClientesView();
+            stage.menuClientesView();
         } else if (event.getSource() == btnInstructores) {
-            //stage.menuInstructoresView();
+            stage.menuInstructoresView();
         } else if (event.getSource() == btnMaquinas) {
             stage.menuMaquinasView();
         } else if (event.getSource() == btnSesiones) {
-            //stage.menuSesionesView();
+            stage.menuSesionesView();
         } else if (event.getSource() == btnSedes) {
-            //stage.menuSedesView();
+            stage.menuSedesView();
         } else if (event.getSource() == btnMembresias) {
-            //stage.menuMembresiasView();
+            stage.menuMembresiasView();
         } else if (event.getSource() == btnEntrenos) {
             //stage.menuEntrenosView();
         } else if (event.getSource() == btnCerrarSesion) {
@@ -48,7 +48,7 @@ public class MenuPrincipalController implements Initializable {
         } else if (event.getSource() == btnAgregarEntrenos) {
             //stage.menuAgregarEntrenosView();
         } else if (event.getSource() == btnVerEntrenos) {
-            //stage.menuVerEntrenosView();
+            stage.menuEntrenosView();
         }
     }
     

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.smarfat.webapp.gym.controller.FXController.MenuInstructorController">
+    <children>
+      <ImageView fitHeight="323.0" fitWidth="521.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Instructor.png" />
+         </image>
+      </ImageView>
+        <Label layoutX="33.0" layoutY="8.0" text="ID:" textFill="WHITE" />
+        <TextField fx:id="tfId" layoutX="67.0" layoutY="2.0" />
+
+        <Label layoutX="10.0" layoutY="47.0" text="Nombre:" textFill="#eeeeee" />
+        <TextField fx:id="tfNombre" layoutX="67.0" layoutY="42.0" />
+
+        <Label layoutX="1.0" layoutY="85.0" text="Especialidad:" textFill="WHITE" />
+        <TextField fx:id="tfEspecialidad" layoutX="71.0" layoutY="82.0" />
+
+        <Label layoutX="20.0" layoutY="126.0" text="Sueldo:" textFill="WHITE" />
+        <TextField fx:id="tfSueldo" layoutX="67.0" layoutY="122.0" />
+
+        <Label layoutX="16.0" layoutY="165.0" text="Teléfono:" textFill="WHITE" />
+        <TextField fx:id="tfTelefono" layoutX="67.0" layoutY="162.0" />
+
+        <TableView fx:id="tblInstructores" layoutY="203.0" onMouseClicked="#cargarTextField" prefHeight="193.0" prefWidth="483.0">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" />
+                <TableColumn fx:id="colNombre" text="Nombre" />
+                <TableColumn fx:id="colEspecialidad" text="Especialidad" />
+                <TableColumn fx:id="colSueldo" text="Sueldo" />
+            <TableColumn fx:id="colTelefono" text="Telefono" />
+            </columns>
+        </TableView>
+
+        <Button fx:id="btnGuardar" layoutX="417.0" layoutY="13.0" onAction="#handleButtonAction" style="-fx-background-color: #4f4e4d;" text="Guardar" textFill="WHITE">
+         <font>
+            <Font name="Harlow Solid Italic" size="12.0" />
+         </font></Button>
+        <Button fx:id="btnEliminar" layoutX="417.0" layoutY="49.0" onAction="#handleButtonAction" style="-fx-background-color: #4f4e4d;" text="Eliminar" textFill="WHITE">
+         <font>
+            <Font name="Harlow Solid Italic" size="12.0" />
+         </font></Button>
+        <Button fx:id="btnBuscar" layoutX="416.0" layoutY="84.0" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #4f4e4d;" text="Buscar" textFill="WHITE">
+         <font>
+            <Font name="Harlow Solid Italic" size="12.0" />
+         </font></Button>
+        <Button fx:id="btnVaciar" layoutX="415.0" layoutY="122.0" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #4f4e4d;" text="Vaciar" textFill="WHITE">
+         <font>
+            <Font name="Harlow Solid Italic" size="12.0" />
+         </font></Button>
+        <Button fx:id="btnRegresar" layoutX="415.0" layoutY="161.0" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #4f4e4d;" text="Regresar" textFill="WHITE">
+         <font>
+            <Font name="Harlow Solid Italic" size="12.0" />
+         </font></Button>
+    </children>
+</AnchorPane>

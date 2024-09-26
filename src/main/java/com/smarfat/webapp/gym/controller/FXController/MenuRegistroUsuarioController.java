@@ -53,7 +53,7 @@ public class MenuRegistroUsuarioController implements Initializable{
                 stage.menuInicioSesionView();
             }
         }else if(event.getSource() == btnInstructor){
-                //stage.formEmpleadosView(3);
+                //stage.(3);
         }else{
             GymAlertas.getInstance().mostrarAlertasInformacion(33);
             if(tfUsuario.getText().equals("")){
@@ -95,5 +95,7 @@ public class MenuRegistroUsuarioController implements Initializable{
         usuarioService.guardarUsuario(usuario);
 
     }
+
+    
     
 }

@@ -1,6 +1,7 @@
 package com.smarfat.webapp.gym.service;
 
 import com.smarfat.webapp.gym.model.Entreno;
+import com.smarfat.webapp.gym.model.Maquina;
 
 import java.util.List;
 
@@ -18,4 +19,6 @@ public interface IEntrenoService {
     public Boolean limiteClientes(Entreno entreno);
 
     public Boolean verificarMembresia(Entreno entreno);
+
+
 }
