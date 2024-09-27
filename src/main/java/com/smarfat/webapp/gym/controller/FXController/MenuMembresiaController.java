@@ -39,7 +39,7 @@ public class MenuMembresiaController implements Initializable {
     @FXML
     TableColumn colId, colDuracion,colVigencia;
     @FXML
-    Button btnGuardar, btnEliminar, btnLimpiar,btnBuscar;
+    Button btnGuardar, btnEliminar, btnLimpiar,btnBuscar,btnRegresar;
 
     @Autowired
     MembresiaService membresiaService;
@@ -88,6 +88,8 @@ public class MenuMembresiaController implements Initializable {
             } else {
                 buscarMembresia();
             }
+        } else if (event.getSource() == btnRegresar) {
+            stage.menuPrincipalView();
         }
     }
 

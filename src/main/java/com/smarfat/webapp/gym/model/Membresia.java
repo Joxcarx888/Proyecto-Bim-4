@@ -16,4 +16,9 @@ public class Membresia {
     private Long id;
     private int duracion;
     private Boolean vigencia;
+
+    @Override
+    public String toString() {
+        return "Id: " + id + " | " + duracion + " | " + vigencia;
+    }
 }

@@ -15,7 +15,7 @@
             <Image url="@../images/MenuInicial.png" />
          </image>
       </ImageView>
-      <TextField fx:id="tfUsuario" layoutX="63.0" layoutY="215.0" prefHeight="34.0" prefWidth="319.0" promptText="INGRESE SU USUARIO" style="-fx-background-radius: 10; -fx-background-color: #dc8208; -fx-prompt-text-fill: black;">
+      <TextField fx:id="tfUsuario" layoutX="63.0" layoutY="215.0" prefHeight="34.0" prefWidth="319.0" promptText="INGRESE SU USUARIO" style="-fx-background-radius: 10; -fx-prompt-text-fill: black;">
          <font>
             <Font name="Rockwell Condensed Bold" size="18.0" />
          </font>
@@ -30,7 +30,7 @@
             <Font name="Berlin Sans FB Demi Bold" size="15.0" />
          </font>
       </Button>
-      <PasswordField fx:id="tfContra" layoutX="63.0" layoutY="287.0" prefHeight="34.0" prefWidth="319.0" promptText="INGRESE SU CONTRASEÑA" style="-fx-background-radius: 10; -fx-background-color: #dc8208; -fx-prompt-text-fill: BLACK;">
+      <PasswordField fx:id="tfContra" layoutX="63.0" layoutY="287.0" prefHeight="34.0" prefWidth="319.0" promptText="INGRESE SU CONTRASEÑA" style="-fx-background-radius: 10; -fx-prompt-text-fill: BLACK;">
          <font>
             <Font name="Rockwell Condensed Bold" size="18.0" />
          </font>

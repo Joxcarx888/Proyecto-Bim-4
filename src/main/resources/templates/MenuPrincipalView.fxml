@@ -20,17 +20,10 @@
         <menus>
           <Menu mnemonicParsing="false" style="-fx-background-color: #4f4e4d;" text="Módulos">
             <items>
-<<<<<<< HEAD
-              <MenuItem fx:id="btnClientes" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #FA9220; -fx-font-weight: bold;" text="Clientes" />
-                  <MenuItem fx:id="btnInstructores" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #FA9220;" text="Intructores" />
-                  <MenuItem fx:id="btnMaquinas" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #FA9220; -fx-font-weight: bold;" text="Maquinas" />
-                  <MenuItem fx:id="btnSesiones" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #FA9220; -fx-font-weight: bold;" text="Sesiones" />
-=======
               <MenuItem fx:id="btnClientes" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #4f4e4d;" text="Clientes" />
                   <MenuItem fx:id="btnInstructores" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #4f4e4d;" text="Intructores" />
                   <MenuItem fx:id="btnMaquinas" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #4f4e4d;" text="Maquinas" />
                   <MenuItem fx:id="btnSesiones" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #4f4e4d;" text="Sesiones" />
->>>>>>> origin/jmorejon-2020558
             </items>
           </Menu>
             <Menu mnemonicParsing="false" style="-fx-background-color: #4f4e4d;" text="Sedes">
@@ -46,28 +39,14 @@
               <MenuItem mnemonicParsing="false" text="Acerca De" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" style="-fx-background-color: #4f4e4d; -fx-text-fill: #ffffff;" text="Editar o Eliminar Entrenos">
-               <items>
-<<<<<<< HEAD
-                  <MenuItem fx:id="btnEntrenos" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #FA9220; -fx-font-weight: bold;" text="Entrenos" />
-=======
-                  <MenuItem fx:id="btnEntrenos" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #4f4e4d; -fx-font-weight: bold;" text="Entrenos" />
->>>>>>> origin/jmorejon-2020558
-               </items>
-            </Menu>
         </menus>
       </MenuBar>
-      <Button fx:id="btnCerrarSesion" layoutX="758.0" layoutY="37.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="9.0" prefWidth="169.0" style="-fx-background-color: #4f4e4d; -fx-background-radius: 40;" text="Cerrar Sesion" textFill="WHITE" wrapText="true">
+      <Button fx:id="btnCerrarSesion" layoutX="42.0" layoutY="63.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="9.0" prefWidth="169.0" style="-fx-background-color: #4f4e4d; -fx-background-radius: 40;" text="Cerrar Sesion" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Harlow Solid Italic" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnAgregarEntrenos" layoutX="48.0" layoutY="73.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="9.0" prefWidth="169.0" style="-fx-background-color: #4f4e4d; -fx-background-radius: 40;" text="Agregar Entreno" textFill="WHITE" wrapText="true">
-         <font>
-            <Font name="Harlow Solid Italic" size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnVerEntrenos" layoutX="48.0" layoutY="163.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="9.0" prefWidth="169.0" style="-fx-background-color: #4f4e4d; -fx-background-radius: 40;" text="Ver Entrenos" textFill="WHITE" wrapText="true">
+      <Button fx:id="btnVerEntrenos" layoutX="42.0" layoutY="119.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="9.0" prefWidth="169.0" style="-fx-background-color: #4f4e4d; -fx-background-radius: 40;" text="Ver Entrenos" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Harlow Solid Italic" size="18.0" />
          </font>

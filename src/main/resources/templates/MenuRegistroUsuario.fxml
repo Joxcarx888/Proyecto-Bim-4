@@ -15,7 +15,7 @@
             <Image url="@../images/MenuRegistroUsuario.png" />
          </image>
       </ImageView>
-      <TextField fx:id="tfContra" layoutX="28.0" layoutY="116.0" prefHeight="34.0" prefWidth="236.0" promptText="INGRESE SU CONTRASEÑA" style="-fx-background-radius: 10; -fx-background-color: #FA9120; -fx-prompt-text-fill: black;">
+      <TextField fx:id="tfContra" layoutX="28.0" layoutY="116.0" prefHeight="34.0" prefWidth="236.0" promptText="INGRESE SU CONTRASEÑA" style="-fx-background-radius: 10; -fx-prompt-text-fill: black;">
          <font>
             <Font name="Rockwell Condensed Bold" size="18.0" />
          </font>
@@ -30,14 +30,14 @@
             <Font name="Berlin Sans FB Demi Bold" size="15.0" />
          </font>
       </Button>
-      <ComboBox fx:id="cmbIntructores" layoutX="28.0" layoutY="196.0" prefHeight="34.0" prefWidth="236.0" style="-fx-background-color: #FA9120; -fx-background-radius: 10;" />
-      <ComboBox fx:id="cmbNivelAcceso" layoutX="28.0" layoutY="319.0" prefHeight="34.0" prefWidth="236.0" style="-fx-background-color: #FA9120; -fx-background-radius: 10;" />
+      <ComboBox fx:id="cmbIntructores" layoutX="28.0" layoutY="196.0" prefHeight="34.0" prefWidth="236.0" style="-fx-background-radius: 10;" />
+      <ComboBox fx:id="cmbNivelAcceso" layoutX="28.0" layoutY="319.0" prefHeight="34.0" prefWidth="236.0" style="-fx-background-radius: 10;" />
       <Button fx:id="btnInstructor" contentDisplay="CENTER" layoutX="330.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="54.0" prefWidth="141.0" style="-fx-background-radius: 40; -fx-background-color: #4f4e4d;" text="Agregar Instructor" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="15.0" />
          </font>
       </Button>
-      <TextField fx:id="tfUsuario" layoutX="28.0" layoutY="44.0" prefHeight="34.0" prefWidth="236.0" promptText="INGRESE SU USUARIO" style="-fx-background-radius: 10; -fx-background-color: #FA9120; -fx-prompt-text-fill: black;">
+      <TextField fx:id="tfUsuario" layoutX="28.0" layoutY="44.0" prefHeight="34.0" prefWidth="236.0" promptText="INGRESE SU USUARIO" style="-fx-background-radius: 10; -fx-prompt-text-fill: black;">
          <font>
             <Font name="Rockwell Condensed Bold" size="18.0" />
          </font>

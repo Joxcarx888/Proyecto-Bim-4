@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.smarfat.webapp.gym.controller.FXController.MenuClienteController">
+   <children>
+      <ImageView fitHeight="850.0" fitWidth="1200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/MenuCliente.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblClientes" layoutX="435.0" layoutY="245.0" onMouseClicked="#cargarTextField" prefHeight="420.0" prefWidth="667.0">
+        <columns>
+          <TableColumn fx:id="colId" minWidth="76.79995727539062" prefWidth="76.79995727539062" text="Id" />
+          <TableColumn fx:id="colDpi" minWidth="131.99993896484375" prefWidth="131.99993896484375" text="dpi" />
+            <TableColumn fx:id="colNombre" minWidth="137.0" prefWidth="146.9332275390625" text="nombre" />
+            <TableColumn fx:id="colTelefono" minWidth="125.3333740234375" prefWidth="125.3333740234375" text="telefono" />
+            <TableColumn fx:id="colMembresia" minWidth="137.0" prefWidth="181.86663818359375" text="membresia" />
+        </columns>
+      </TableView>
+      <TextField fx:id="tfId" editable="false" layoutX="56.0" layoutY="215.0" prefHeight="44.0" prefWidth="266.0" />
+      <Text fill="WHITE" layoutX="41.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id : " wrappingWidth="107.32642364501953">
+         <font>
+            <Font size="52.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfDpi" layoutX="58.0" layoutY="336.0" prefHeight="44.0" prefWidth="266.0" />
+      <Text fill="WHITE" layoutX="37.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dpi:" wrappingWidth="227.8597640991211">
+         <font>
+            <Font size="52.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfNombre" layoutX="59.0" layoutY="466.0" prefHeight="44.0" prefWidth="266.0" />
+      <Text fill="WHITE" layoutX="38.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:" wrappingWidth="227.8597640991211">
+         <font>
+            <Font size="52.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfTelefono" layoutX="57.0" layoutY="585.0" prefHeight="44.0" prefWidth="266.0" />
+      <Text fill="WHITE" layoutX="36.0" layoutY="559.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono:" wrappingWidth="227.8597640991211">
+         <font>
+            <Font size="52.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="cmbMembresia" layoutX="61.0" layoutY="690.0" prefHeight="34.0" prefWidth="270.0" />
+      <Text fill="WHITE" layoutX="27.0" layoutY="677.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Membresia:" wrappingWidth="284.3932113647461">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnGuardar" layoutX="398.0" layoutY="720.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="171.0" text="Guardar">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnLimpiar" layoutX="797.0" layoutY="717.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="171.0" text="Limpiar">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnRegresar" layoutX="985.0" layoutY="716.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="171.0" text="Regresar">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <TextField fx:id="tfClientesId" layoutX="527.0" layoutY="162.0" prefHeight="44.0" prefWidth="266.0" promptText="Ingrese el ID para buscar" />
+      <Button fx:id="btnBuscar" layoutX="800.0" layoutY="167.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="33.0" prefWidth="68.0" style="-fx-border-radius: 50;">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="35.0" onDragDetected="#handleButtonAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Lupa.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fitHeight="20.0" fitWidth="35.0" layoutX="355.0" layoutY="92.0" onDragDetected="#handleButtonAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Lupa.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnEliminar" layoutX="589.0" layoutY="719.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="171.0" text="Eliminar">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

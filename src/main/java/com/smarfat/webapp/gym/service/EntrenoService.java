@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.smarfat.webapp.gym.model.Cliente;
 import com.smarfat.webapp.gym.model.Entreno;
+import com.smarfat.webapp.gym.model.Maquina;
 import com.smarfat.webapp.gym.repository.EntrenoRepository;
 
 @Service
@@ -72,8 +73,4 @@ public class EntrenoService implements IEntrenoService{
         return flag;
     }
 
-
-
-
- 
 }
